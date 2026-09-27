@@ -92,6 +92,7 @@ STOCK_TABLES = [
     "stock_st",
     "suspend_d",
     "stk_limit",
+    "stk_holdertrade",
     "index_daily",
     "index_weight",
     "idx_anns",

@@ -41,6 +41,7 @@ uv run python main.py sync --table daily_basic  # 每日指标：总市值、流
 uv run python main.py sync --table stock_st     # 每日 ST 股票列表
 uv run python main.py sync --table suspend_d    # 每日停牌列表
 uv run python main.py sync --table stk_limit    # 每日涨跌停价格
+uv run python main.py sync --table stk_holdertrade  # 股东增减持（按公告日，自然日同步，2006 年起）
 uv run python main.py sync --table index_weight # 沪深300/中证500/中证1000成分
 uv run python main.py sync --table index_daily  # 宽基指数日线行情
 uv run python main.py sync --table idx_anns     # 指数公司公告（自然日同步）

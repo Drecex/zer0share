@@ -50,6 +50,10 @@ class LocalPro:
         _check_dates(kwargs)
         return stock.suspend_d(self._ctx, **kwargs)
 
+    def stk_holdertrade(self, **kwargs):
+        _check_dates(kwargs)
+        return stock.stk_holdertrade(self._ctx, **kwargs)
+
     def stk_limit(self, **kwargs):
         _check_dates(kwargs)
         return stock.stk_limit(self._ctx, **kwargs)
@@ -184,6 +188,7 @@ class LocalPro:
             "stock_st": self.stock_st,
             "suspend_d": self.suspend_d,
             "stk_limit": self.stk_limit,
+            "stk_holdertrade": self.stk_holdertrade,
             "index_daily": self.index_daily,
             "index_weight": self.index_weight,
             "sw_daily": self.sw_daily,

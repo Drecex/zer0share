@@ -98,6 +98,7 @@ opt_snapshot = pro.opt_daily(trade_date="20240102", exchange="SSE")   # 某日�
 | `stock_st` | 查询已同步的每日 ST 股票列表 |
 | `suspend_d` | 查询已同步的每日停复牌信息 |
 | `stk_limit` | 查询已同步的每日涨跌停价格 |
+| `stk_holdertrade` | 查询已同步的股东增减持（按 `ann_date` 分区；`holder_type` C 公司 / P 个人 / G 高管，`trade_type` IN 增持 / DE 减持） |
 | `index_weight` | 查询已同步的指数成分和权重 |
 | `index_daily` | 查询已同步的宽基指数日线行情（12个指数） |
 | `idx_anns` | 查询已同步的指数公司公告（按 `ann_date` 分区） |

@@ -28,6 +28,8 @@ data/
 │   │   └── date=YYYYMMDD/data.parquet
 │   ├── stk_limit/
 │   │   └── date=YYYYMMDD/data.parquet
+│   ├── stk_holdertrade/               # 股东增减持，按公告日（含周末）分区
+│   │   └── date=YYYYMMDD/data.parquet
 │   ├── industry/
 │   │   ├── sw_classify/data.parquet    # 申万行业分类树
 │   │   ├── sw_member/data.parquet      # 申万股票-行业映射（全量历史）
