@@ -96,6 +96,19 @@ uv run python main.py sync --table ricequant_etf_minute         # ETF 分钟线
 
 需要在 `config/settings.toml` 的 `[ricequant]` 里配置 license key 或用户名/密码，详见 [RiceQuant 分钟线文档](ricequant.md)。
 
+### 新闻（可选，需单独开通新闻权限）
+
+新闻不走 `sync --table`，有单独的命令，数据存入 `data/news/news.db`（SQLite），原始返回归档在 `data/news/raw/`：
+
+```bash
+uv run python main.py news sync --api major_news --start-date 20250324              # 长篇通讯，默认同步到今天
+uv run python main.py news sync --api news --start-date 20250324 --src sina --src cls  # 快讯，只同步指定来源
+uv run python main.py news sync --api major_news --start-date 20250324 --with-content  # 同时存正文（整页 HTML，体积大）
+uv run python main.py news sync --api news --start-date 20250324 --refresh             # 忽略断点，重拉已完成的日期
+```
+
+已完成的（接口, 来源, 日期）会自动跳过。新闻权限通常要单独开通，可在 `config/settings.toml` 的 `[tushare_news]` 里配置另一个账号的 token（不写则沿用 `[tushare]`），详见 `config/settings.example.toml`。
+
 ## 首次验证建议
 
 先同步一个小区间，确认 Tushare 权限和字段可用后再全量回填：
